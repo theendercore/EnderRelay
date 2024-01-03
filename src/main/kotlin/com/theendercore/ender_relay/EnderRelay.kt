@@ -1,21 +1,17 @@
-package org.teamvoided.template
+package com.theendercore.ender_relay
 
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
 
 @Suppress("unused")
-object Template {
-    const val MODID = "template"
+object EnderRelay {
+    const val MODID = "ender_relay"
 
     @JvmField
-    val LOGGER = LoggerFactory.getLogger(Template::class.java)
+    val LOGGER = LoggerFactory.getLogger(EnderRelay::class.simpleName)
 
     fun commonInit() {
         LOGGER.info("Hello from Common")
-    }
-
-    fun clientInit() {
-        LOGGER.info("Hello from Client")
     }
 
     fun id(path: String) = Identifier(MODID, path)
