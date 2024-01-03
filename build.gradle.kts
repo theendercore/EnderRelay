@@ -11,10 +11,12 @@ group = project.properties["maven_group"]!!
 version = project.properties["mod_version"]!!
 base.archivesName.set(project.properties["archives_base_name"] as String)
 description = "ender_relay desc"
-val modid = project.properties["modid"]!! as String
+
+val modid = property("modid") as String
 
 repositories {
     mavenCentral()
+    maven ("https://maven.nucleoid.xyz")
 }
 
 modSettings {
@@ -22,6 +24,13 @@ modSettings {
     modName("Ender Relay")
 
     entrypoint("main", "com.theendercore.ender_relay.EnderRelay::commonInit")
+}
+
+val polymer_version = property("polymer_version")as String
+dependencies{
+    modImplementation( include("eu.pb4:polymer-core:${polymer_version}")!!)
+    modImplementation( include("eu.pb4:polymer-blocks:${polymer_version}")!!)
+    modImplementation( include("eu.pb4:polymer-resource-pack:${polymer_version}")!!)
 }
 
 tasks {
