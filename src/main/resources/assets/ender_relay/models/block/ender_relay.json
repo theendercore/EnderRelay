@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/iron_block",
+    "east": "minecraft:block/copper_block",
+    "north": "minecraft:block/gold_block",
+    "particle": "minecraft:block/diamond_block",
+    "south": "minecraft:block/oak_planks",
+    "up": "minecraft:block/birch_planks",
+    "west": "minecraft:block/jungle_planks"
+  }
+}

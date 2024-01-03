@@ -16,7 +16,7 @@ val modid = property("modid") as String
 
 repositories {
     mavenCentral()
-    maven ("https://maven.nucleoid.xyz")
+    maven("https://maven.nucleoid.xyz")
 }
 
 modSettings {
@@ -26,11 +26,16 @@ modSettings {
     entrypoint("main", "com.theendercore.ender_relay.EnderRelay::commonInit")
 }
 
-val polymer_version = property("polymer_version")as String
-dependencies{
-    modImplementation( include("eu.pb4:polymer-core:${polymer_version}")!!)
-    modImplementation( include("eu.pb4:polymer-blocks:${polymer_version}")!!)
-    modImplementation( include("eu.pb4:polymer-resource-pack:${polymer_version}")!!)
+val polymer_version = property("polymer_version") as String
+val factory_tools = property("factory_tools") as String
+dependencies {
+    modImplementation("eu.pb4:polymer-autohost:${polymer_version}")
+    modImplementation("eu.pb4:polymer-core:${polymer_version}")
+    modImplementation("eu.pb4:polymer-blocks:${polymer_version}")
+    modImplementation("eu.pb4:polymer-resource-pack:${polymer_version}")
+    modImplementation("eu.pb4:polymer-virtual-entity:${polymer_version}")
+    modImplementation(include("eu.pb4:factorytools:${factory_tools}")!!)
+
 }
 
 tasks {
